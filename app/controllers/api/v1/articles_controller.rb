@@ -10,7 +10,7 @@ module Api
       def create
         @article = Article.new(article_params)
         if @article.save
-          render json: { status: 200, data: @article },
+          render json: { status: 201, data: @article },
                  status: :created
         else
           render json: { status: 422, data: 'Article not created' },
@@ -18,17 +18,33 @@ module Api
         end
       end
 
-      # def show
+      def show
+        @article = Article.find(params[:id])
+        render json: { status: 200, data: @article },
+               status: :ok
+      end
 
-      # end
+      def update
+        @article = Article.find(params[:id])
+        if @article.update(article_params)
+          render json: { status: 200, data: @article },
+                 status: :ok
+        else
+          render json: { status: 422, data: 'Article not updated' },
+                 status: :unprocessable_entity
+        end
+      end
 
-      # def update
-
-      # end
-
-      # def destroy
-
-      # end
+      def destroy
+        @article = Article.find(params[:id])
+        if @article.destroy
+          render json: { status: 200, data: @article },
+                 status: :ok
+        else
+          render json: { status: 422, data: 'Article not deleted' },
+                 status: :unprocessable_entity
+        end
+      end
 
       private
 
