@@ -1,24 +1,19 @@
-# README
+# Author's Haven (Ruby on Rails, React, AWS)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Author's Haven blogging application with API in Ruby on Rails and Client in React. Hosted on Heroku and AWS
 
-Things you may want to cover:
+#### Functions
+1. User authentication
+2. Create article
+3. Read articles
+4. Update articles
+5. Delete articles
+6. Follow users
+7. Get notification when "followee" posts new article
+8. Show follow stats with charts
 
-* Ruby version
 
-* System dependencies
+#### Developer info.
+- [Trello Board](https://trello.com/b/XJ8Pkcqm/authors-haven-ror-react-aws)
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
