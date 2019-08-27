@@ -1,0 +1,8 @@
+AllCops:
+  Include:
+    - 'app/**/*.rb'
+  Exclude:
+    - 'bin/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
