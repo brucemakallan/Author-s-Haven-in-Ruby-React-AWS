@@ -38,6 +38,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop', '~> 0.74.0', require: false
   gem 'solargraph', '~> 0.37.2'
+  gem 'rb-readline', '~> 0.5.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
