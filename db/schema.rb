@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 2019_08_27_143327) do
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.string "image_url"
+    t.string "title", null: false
+    t.text "body", null: false
+    t.string "image_url", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
