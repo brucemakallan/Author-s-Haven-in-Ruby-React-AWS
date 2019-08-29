@@ -6,5 +6,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :articles, class_name: "Article", foreign_key: "author_id"
+  has_many :articles, class_name: 'Article', foreign_key: 'author_id'
 end

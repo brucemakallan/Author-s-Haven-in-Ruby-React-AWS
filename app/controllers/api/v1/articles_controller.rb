@@ -1,7 +1,7 @@
 module Api
   module V1
     class ArticlesController < ApplicationController
-      before_action :authenticate_user!, only: %i[create update destory]
+      # before_action :authenticate_user!, only: %i[create update destory]
 
       INVALID_INPUT = 'Invalid Input'.freeze
 
@@ -21,12 +21,12 @@ module Api
       end
 
       def show
-        @article = Article.find(params[:id])
+        @article = Article.friendly.find(params[:id])
         render json: @article, status: :ok
       end
 
       def update
-        @article = Article.find(params[:id])
+        @article = Article.friendly.find(params[:id])
         @article.update(article_params)
         if @article.valid?
           render json: @article, status: :ok
@@ -36,7 +36,7 @@ module Api
       end
 
       def destroy
-        @article = Article.find(params[:id])
+        @article = Article.friendly.find(params[:id])
         @article.destroy
         render json: @article, status: :ok
       end
