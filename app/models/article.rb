@@ -7,5 +7,5 @@ class Article < ApplicationRecord
   validates :title,
             presence: true,
             uniqueness: { case_sensitive: false },
-            length: { minimum: 2, maximum: 100 }
+            length: { within: 2..100 }
 end
