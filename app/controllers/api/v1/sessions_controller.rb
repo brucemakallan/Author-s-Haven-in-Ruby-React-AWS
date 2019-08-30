@@ -1,18 +1,17 @@
 module Api
   module V1
-    class SessionsController < ApplicationController
-      INVALID_CREDENTIALS = 'Invalid credentials'.freeze
+    class SessionsController < Devise::SessionsController
+      respond_to :json
 
-      def create
-        @user = User.where(email: params[:email]).first
-        if @user&.valid_password?(params[:password])
-          render :create, status: :created
-        else
-          render json: { error: INVALID_CREDENTIALS }, status: :unauthorized
-        end
+      private
+
+      def respond_with(resource, _opts = {})
+        render json: resource
       end
 
-      def destroy; end
+      def respond_to_on_destroy
+        head :no_content
+      end
     end
   end
 end

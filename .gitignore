@@ -22,3 +22,4 @@
 /config/master.key
 
 .vscode
+/config/local_env.yml
