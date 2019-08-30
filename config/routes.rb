@@ -9,8 +9,8 @@ Rails.application.routes.draw do
                    registration: 'signup'
                  },
                  controllers: {
-                   sessions: 'api/v1/sessions',
-                   registrations: 'api/v1/registrations'
+                   sessions: 'api/v1/users/sessions',
+                   registrations: 'api/v1/users/registrations'
                  }      
 
       resources :articles
