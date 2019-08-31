@@ -11,8 +11,8 @@ module Api
       end
 
       def create
-        JwtDecorder.new(request.headers).authenticate_user
-        @article = Article.new(article_params)
+        user = JwtDecorder.new(request.headers).authenticate_user
+        @article = user.articles.build(article_params)
         if @article.valid?
           @article.save
           render json: @article, status: :created
@@ -27,6 +27,7 @@ module Api
       end
 
       def update
+        JwtDecorder.new(request.headers).authenticate_user
         @article = Article.friendly.find(params[:id])
         @article.update(article_params)
         if @article.valid?
@@ -37,6 +38,7 @@ module Api
       end
 
       def destroy
+        JwtDecorder.new(request.headers).authenticate_user
         @article = Article.friendly.find(params[:id])
         @article.destroy
         render json: @article, status: :ok

@@ -27,6 +27,6 @@ class JwtDecorder
   end
 
   def authenticate_user
-    raise JWT::DecodeError unless current_user
+    current_user || (raise JWT::DecodeError && nil)
   end
 end
