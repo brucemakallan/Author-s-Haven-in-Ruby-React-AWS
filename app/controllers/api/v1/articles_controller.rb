@@ -6,7 +6,7 @@ module Api
       INVALID_INPUT = 'Invalid Input'.freeze
 
       def index
-        @articles = Article.all
+        @articles = Article.page(params[:page].to_i).per(params[:limit].to_i)
         render json: @articles, status: :ok
       end
 
