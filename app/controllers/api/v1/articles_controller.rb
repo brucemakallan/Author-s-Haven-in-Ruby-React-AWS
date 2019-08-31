@@ -11,6 +11,7 @@ module Api
       end
 
       def create
+        JwtDecorder.new(request.headers).authenticate_user
         @article = Article.new(article_params)
         if @article.valid?
           @article.save

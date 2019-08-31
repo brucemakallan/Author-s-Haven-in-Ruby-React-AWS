@@ -16,6 +16,10 @@ module ErrorHandler
       rescue_from ActiveRecord::NotNullViolation do |e|
         respond(e, 'Required field missing')
       end
+
+      rescue_from JWT::DecodeError do |e|
+        respond(e, 'Not Authorized', :unauthorized)
+      end
     end
   end
 

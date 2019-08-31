@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_31_102316) do
+ActiveRecord::Schema.define(version: 2019_08_31_151246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,10 @@ ActiveRecord::Schema.define(version: 2019_08_31_102316) do
     t.string "image_url", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.bigint "author_id"
+    t.index ["author_id"], name: "index_articles_on_author_id"
+    t.index ["slug"], name: "index_articles_on_slug", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,4 +36,5 @@ ActiveRecord::Schema.define(version: 2019_08_31_102316) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "articles", "users", column: "author_id"
 end
