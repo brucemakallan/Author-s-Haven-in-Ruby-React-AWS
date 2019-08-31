@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::API
+  include ActionController::MimeResponds
   include ErrorHandler
+
+  respond_to :json
 
   INVALID_INPUT = 'Invalid Input'.freeze
 
