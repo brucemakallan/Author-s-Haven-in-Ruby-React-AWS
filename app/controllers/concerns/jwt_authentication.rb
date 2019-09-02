@@ -9,12 +9,12 @@ class JwtAuthentication
       email: user.email,
       exp: EXPIRY
     }
-    JWT.encode(payload, Rails.application.secrets.secret_key_base, 'HS256')
+    JWT.encode(payload, Rails.application.secrets.secret_key_base.to_s, 'HS256')
   end
 
   def self.decode(token)
     body, _header = JWT.decode(
-      token, Rails.application.secrets.secret_key_base, true, algorithm: 'HS256'
+      token, Rails.application.secrets.secret_key_base.to_s, true, algorithm: 'HS256'
     )
     HashWithIndifferentAccess.new(body)
   rescue JWT::ExpiredSignature
