@@ -1,8 +1,6 @@
 module Api
   module V1
     class ArticlesController < ApplicationController
-      # before_action :authenticate_user!, only: %i[create update destory]
-
       INVALID_INPUT = 'Invalid Input'.freeze
 
       def index
