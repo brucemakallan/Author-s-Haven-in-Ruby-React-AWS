@@ -1,0 +1,23 @@
+AllCops:
+  Include:
+    - 'app/**/*.rb'
+  Exclude:
+    - 'bin/*'
+
+Style/FrozenStringLiteralComment:
+  Description: >-
+                 Add the frozen_string_literal comment to the top of files
+                 to help transition to frozen string literals by default.
+  Enabled: false
+
+Style/Documentation:
+  Description: 'Document classes and non-namespace modules.'
+  Enabled: false
+
+Metrics/LineLength:
+  Description: 'Limit lines to 110 characters.'
+  Max: 110
+
+Metrics/MethodLength:
+  Description: 'Avoid methods longer than 10 lines of code.'
+  ExcludedMethods: [included]
