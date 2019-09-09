@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.1"
 
-set :application, "Author-s-Haven-in-Ruby-React-AWS"
+set :application, "authorshaven"
 set :repo_url, "https://github.com/brucemakallan/Author-s-Haven-in-Ruby-React-AWS.git"
 
 # Default branch is :master
