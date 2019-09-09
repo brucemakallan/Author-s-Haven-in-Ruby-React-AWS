@@ -1,6 +1,6 @@
 # Author's Haven (Ruby on Rails, React, AWS)
 
-> Author's Haven blogging application with API in Ruby on Rails and Client in React. Hosted on Heroku and AWS
+> Author's Haven blogging application with API in Ruby on Rails and Client in React. Hosted on AWS (EC2 with Postgres database on RDS)
 
 #### Functions / Features
 1. User authentication
@@ -8,6 +8,9 @@
 3. Read articles
 4. Update articles
 5. Delete articles
+
+
+   TODO:
 6. Follow users
 7. Get notification when "followee" posts new article
 8. Show follow stats with charts
@@ -19,11 +22,11 @@
 - Version Control
   - [GitHub Repository](https://github.com/brucemakallan/Author-s-Haven-in-Ruby-React-AWS)
 
-#### Heroku Deployment
-https://authors-haven-rails.herokuapp.com
+#### AWS (EC2 with RDS - Postgres) Deployment
+http://ec2-34-238-116-235.compute-1.amazonaws.com
 
  - e.g. Get `page` 1 of Articles with a `limit` of 2 Articles per page
-`https://authors-haven-rails.herokuapp.com/api/v1/articles?page=1&limit=2`
+`http://ec2-34-238-116-235.compute-1.amazonaws.com/api/v1/articles?page=1&limit=2`
 
 
 #### API
@@ -79,7 +82,7 @@ https://authors-haven-rails.herokuapp.com
 ]
   ```
 4. Get one Article
-   **GET** `**/api/v1/articles/:id_or_slug`
+   **GET** `/api/v1/articles/:id_or_slug`
   ```
   {
       "id": 17,
