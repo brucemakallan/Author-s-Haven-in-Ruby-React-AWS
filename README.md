@@ -21,6 +21,8 @@
   - [Public Trello Board](https://trello.com/b/XJ8Pkcqm/authors-haven-ror-react-aws)
 - Version Control
   - [GitHub Repository](https://github.com/brucemakallan/Author-s-Haven-in-Ruby-React-AWS)
+- Client Application (ReactJS)
+  - [Learning Chartio](https://github.com/brucemakallan/LearningChartio)
 
 #### AWS (EC2 with RDS - Postgres) Deployment
 http://ec2-34-238-116-235.compute-1.amazonaws.com
