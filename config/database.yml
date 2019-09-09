@@ -80,7 +80,8 @@ test:
 #
 production:
   <<: *default
-  # database: authors_haven_production
-  # username: authors_haven
-  # password: <%= ENV['AUTHORS_HAVEN_DATABASE_PASSWORD'] %>
-  url: <%= ENV['DATABASE_URL'] %>
+  database: authors-haven-aws-db
+  username: <%= ENV['AWS_RDS_DATABASE_USER'] %>
+  password: <%= ENV['AWS_RDS_DATABASE_PASSWORD'] %>
+  host: <%= ENV['AWS_RDS_DATABASE_HOST'] %>
+  port: <%= ENV['AWS_RDS_DATABASE_PORT'] %>
