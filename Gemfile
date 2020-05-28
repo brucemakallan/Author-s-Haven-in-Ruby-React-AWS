@@ -27,7 +27,7 @@ gem 'rack-cors'
 
 gem 'friendly_id', '~> 5.1'
 gem 'jwt', '~> 2.2', '>= 2.2.1'
-gem 'kaminari', '~> 0.16.3'
+gem 'kaminari', '~> 1.2.1'
 gem 'figaro'
 gem 'capistrano'
 gem 'capistrano-bundler'
